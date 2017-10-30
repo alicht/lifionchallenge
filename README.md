@@ -6,10 +6,21 @@
 
 
 ## 2) SQL Query 
-
-(attached)
+```
+SELECT videos.title,
+FROM subscribers JOIN videos ON videos.id = streams.video_id
+WHERE videos.timestamp >= "2017-01-01"
+AND videos.timestamp < "2017-02-01"
+GROUP BY videos.title
+ORDER BY videos.title LIMIT 20
+```
 
 ## 3) Algorithm
-
-(attached)
-
+```
+function cancelationNotice(invoices, subscribers){
+  var accountsPastDue = subscribers.filter(function(subscriber, amountDue){
+    return subscriber.invoices.amountDue > 0;
+  })
+  return accountsPastDue;
+}
+```
